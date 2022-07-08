@@ -5,8 +5,8 @@ provider "google" {
 }
 
 resource "google_dns_managed_zone" "cloud-dns" {
-  name        = "Bruttech-zone"
-  dns_name    = "Bruttech- ${random_id.rnd.hex}.com."
+  name        = "bruttech-zone"
+  dns_name    = "bruttech-${random_id.rnd.hex}.com."
   description = "Cloud DNS Module"
   labels = {
     foo = "bar"
