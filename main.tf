@@ -15,4 +15,4 @@ resource "google_compute_route" "default" {
 resource "google_compute_network" "default" {
   name = "compute-network"
 }
-*\
+*/ 
