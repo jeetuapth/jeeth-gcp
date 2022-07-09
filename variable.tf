@@ -1,6 +1,6 @@
 variable "networks" {
-  type    = list("network1","network2")
-  default = null
+  type    = list()
+  default = "network1","network2"
 }
 
 variable "auto_create_subnet" {
