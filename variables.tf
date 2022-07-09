@@ -1,3 +1,8 @@
+variable "project" {
+  type    = string
+  default = jitendralab
+}
+
 variable "region" {
     default = asia-south1
 }
@@ -7,10 +12,7 @@ variable "zone" {
   default = asia-south1-c
 }
 
-variable "project" {
-  type    = string
-  default = jitendralab
-}
+
 
 variable "networks_name" {
   type    = string
