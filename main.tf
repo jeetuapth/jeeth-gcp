@@ -3,16 +3,23 @@ provider "google" {
   region  = "asia-south1"
   zone    = "asia-south1-c"
 }
-/*
-resource "google_compute_route" "default" {
-  name        = "network-route"
-  dest_range  = "15.0.0.0/24"
-  network     = google_compute_network.default.name
-  next_hop_ip = "10.132.1.5"
-  priority    = 100
+resource "google_compute_router" "foobar" {
+  name    = "my-router"
+  network = google_compute_network.foobar.name
+  bgp {
+    asn               = 64514
+    advertise_mode    = "CUSTOM"
+    advertised_groups = ["ALL_SUBNETS"]
+    advertised_ip_ranges {
+      range = "1.2.3.4"
+    }
+    advertised_ip_ranges {
+      range = "6.7.0.0/16"
+    }
+  }
 }
 
-resource "google_compute_network" "default" {
-  name = "compute-network"
+resource "google_compute_network" "foobar" {
+  name                    = "my-network"
+  auto_create_subnetworks = false
 }
-*/ 
