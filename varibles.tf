@@ -1,5 +1,5 @@
 variable "region" {
-  type    = string
+  type    = set()
   default = asia-south1
 }
 
