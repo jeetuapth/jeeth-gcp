@@ -1,10 +1,10 @@
 variable "networks" {
-  type = list()
+  type    = list()
   default = null
 }
 
 variable "auto_create_subnet" {
-  type = bool
+  type    = bool
   default = false
 }
 
@@ -13,7 +13,7 @@ variable "private_zone" {
 }
 
 variable "dns_name" {
-  type = string
+  type    = string
   default = "abc.com"
 }
 

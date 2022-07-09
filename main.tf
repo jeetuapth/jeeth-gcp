@@ -5,15 +5,15 @@ provider "google" {
 }
 
 resource "google_compute_network" "cloud_dns" {
-  count = length(var.networks)
-  name = var.networks[count.index]
+  count                   = length(var.networks)
+  name                    = var.networks[count.index]
   auto_create_subnetworks = var.auto_create_subnet
-  
+
 }
 
 resource "google_dns_managed_zone" "cloud_dns" {
-  name = var.private_zone
-  dns_name = var.dns_name
+  name        = var.private_zone
+  dns_name    = var.dns_name
   description = "private dns zone with module"
   labels = {
     purpose = "test"
