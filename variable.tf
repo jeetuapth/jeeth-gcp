@@ -4,7 +4,7 @@ variable "networks" {
 }
 
 variable "auto_create_subnet" {
-  type = Bool
+  type = bool
   default = false
 }
 
