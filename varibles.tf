@@ -1,38 +1,38 @@
 variable "region" {
-  type = string
+  type    = string
   default = asia-south1
 }
 
 variable "zone" {
-  type = string
+  type    = string
   default = asia-south1-c
 }
 
 variable "project" {
-  type = string
+  type    = string
   default = jitendralab
 }
 
 variable "networks_name" {
-  type = string
+  type    = string
   default = jeeth-network
 }
 
 variable "auto_create_subnet" {
-  type = Bool
+  type    = bool
   default = false
 }
 
 variable "advertise_mode" {
-  type = string
+  type    = string
   default = CUSTOM
 }
 
 variable "asn" {
-  type = string
+  type    = string
   default = 64514
 }
 variable "cloud_router_name" {
-  type = string
+  type    = string
   default = jeeth-cloud-router
 }
