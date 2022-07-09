@@ -1,5 +1,5 @@
 variable "networks" {
-  type    = list()
+  type    = list("network1","network2")
   default = null
 }
 
