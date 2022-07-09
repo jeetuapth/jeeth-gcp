@@ -1,25 +1,27 @@
 provider "google" {
-  project = "jitendralab"
-  region  = "asia-south1"
-  zone    = "asia-south1-c"
+  project = var.project
+  region  = var.region
+  zone    = var.zone
 }
-resource "google_compute_router" "foobar" {
-  name    = "my-router"
-  network = google_compute_network.foobar.name
-  bgp {
-    asn               = 64514
-    advertise_mode    = "CUSTOM"
+resource "google_compute_router" "cloud_router" {
+  name    = var.cloud_router_name
+  network = google_compute_network.cloud_router.name
+
+      bgp {
+    asn               = var.asn
+    advertise_mode    = var.advertise_mode    
     advertised_groups = ["ALL_SUBNETS"]
-    advertised_ip_ranges {
-      range = "1.2.3.4"
+        advertised_ip_ranges {
+      range = "${"10.0.10.0/29"}"
     }
-    advertised_ip_ranges {
-      range = "6.7.0.0/16"
+        advertised_ip_ranges {
+      range = "10.0.20.0/28"
     }
   }
 }
 
-resource "google_compute_network" "foobar" {
-  name                    = "my-network"
-  auto_create_subnetworks = false
+resource "google_compute_network" "cloud_router" {
+  name                    = var.networks_name
+  auto_create_subnetworks = var.auto_create_subnet
+
 }
