@@ -1,6 +1,6 @@
 variable "project" {
   type    = string
-  default = jitendralab
+  default = "jitendralab"
 }
 
 variable "region" {
