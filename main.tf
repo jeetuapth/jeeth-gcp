@@ -3,7 +3,7 @@ provider "google" {
   region  = "asia-south1"
   zone    = "asia-south1-c"
 }
-
+/*
 resource "google_compute_route" "default" {
   name        = "network-route"
   dest_range  = "15.0.0.0/24"
@@ -15,3 +15,4 @@ resource "google_compute_route" "default" {
 resource "google_compute_network" "default" {
   name = "compute-network"
 }
+*\
