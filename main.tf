@@ -1,33 +1,17 @@
 provider "google" {
   project = "jitendralab"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  region  = "asia-south1"
+  zone    = "asia-south1-c"
 }
 
-resource "google_compute_network" "cloud_dns" {
-  count                   = length(var.networks)
-  name                    = var.networks[count.index]
-  auto_create_subnetworks = var.auto_create_subnet
-
+resource "google_compute_route" "default" {
+  name        = "network-route"
+  dest_range  = "15.0.0.0/24"
+  network     = google_compute_network.default.name
+  next_hop_ip = "10.132.1.5"
+  priority    = 100
 }
 
-resource "google_dns_managed_zone" "cloud_dns" {
-  name        = var.private_zone
-  dns_name    = var.dns_name
-  description = "private dns zone with module"
-  labels = {
-    purpose = "test"
-  }
-
-  visibility = "private"
-  private_visibility_config {
-    count = length(var.networks)
-    networks {
-      network_url = google_compute_network.cloud_dns[count.index].id
-    }
-  }
-
+resource "google_compute_network" "default" {
+  name = "compute-network"
 }
-
-
-
