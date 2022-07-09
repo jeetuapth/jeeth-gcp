@@ -10,7 +10,7 @@ resource "google_compute_router" "cloud_router" {
   bgp {
     asn               = var.asn
     advertise_mode    = var.advertise_mode
-    advertised_groups = ["null"]
+    advertised_groups = ["var.advertised_groups"]
        advertised_ip_ranges {
       range = "10.0.10.0/29"
     }

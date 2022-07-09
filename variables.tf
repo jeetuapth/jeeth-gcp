@@ -30,6 +30,11 @@ variable "advertise_mode" {
   default = "CUSTOM"
 }
 
+variable "advertised_groups" {
+  type    = string
+  default = "null"
+}
+
 variable "asn" {
   type    = string
   default = "64514"
