@@ -14,7 +14,7 @@ resource "google_compute_network" "cloud_dns" {
 resource "google_dns_managed_zone" "cloud_dns" {
   name = var.private_zone
   dns_name = var.dns_name
-  description = "private dns zone"
+  description = "private dns zone with module"
   labels = {
     purpose = "test"
   }
