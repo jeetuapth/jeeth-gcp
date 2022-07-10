@@ -8,13 +8,15 @@ resource "google_compute_router" "cloud_router" {
   network = google_compute_network.cloud_router.name
 
   bgp {
-    asn               = var.asn
-    advertise_mode    = var.advertise_mode
+    asn                = var.asn
+    advertise_mode     = var.advertise_mode
     keepalive_interval = 30
-    advertised_groups = ["var.advertised_groups"]
-       advertised_ip_ranges {
+    advertised_groups  = ["var.advertised_groups"]
+    advertised_ip_ranges {
       range = "10.0.10.0/29"
     }
+
+
     advertised_ip_ranges {
       range = "10.0.20.0/28"
     }
