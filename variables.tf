@@ -30,6 +30,6 @@ variable "service_port" {
 }
 
 variable "backend" {
-  type    = map
+  type    = map(any)
   default = "null"
 }
