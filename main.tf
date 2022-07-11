@@ -7,21 +7,7 @@ module "gce-lb-http" {
   source  = "GoogleCloudPlatform/lb-http/google"
   version = "~> 4.4"
   name    = "jeeth-group-http-lb"
-  backends = {
-    default = {
-      description             = null
-      protocol                = "HTTP"
-      port                    = var.service_port
-      port_name               = var.service_port_name
-      timeout_sec             = 10
-      enable_cdn              = false
-      custom_request_headers  = null
-      custom_response_headers = null
-      security_policy         = null
-
-      connection_draining_timeout_sec = null
-      session_affinity                = null
-      affinity_cookie_ttl_sec         = null
+ 
 
       health_check = {
         check_interval_sec  = null
