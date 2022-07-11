@@ -48,5 +48,4 @@ module "gce-lb-http" {
         oauth2_client_secret = null
       }
     }
-  }
-}
+  
