@@ -10,6 +10,6 @@ module "network" {
   #zone = "us-central1-a"
   app_name	= var.app_name
   private_subnet_cidr_1	=	var.private_subnet_cidr_1
-  private_subnet_cidr_2	=	module.network.google_compute_subnetwork.private_subnet_1.subnetworks
+  private_subnet_cidr_2	=	var.private_subnet_cidr_2
 }
 
