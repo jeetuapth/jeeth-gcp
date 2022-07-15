@@ -4,7 +4,7 @@ module "network" {
   # insert required variables here
   project = var.project
   region  = var.region
-  zone = var.zone
+  subzone = var.zone
   #project = "jitendralab"
   #region  = "us-central1"
   #zone = "us-central1-a"
