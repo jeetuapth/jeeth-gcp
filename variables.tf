@@ -1,49 +1,34 @@
+# define GCP project name
 variable "project" {
-  type    = string
+  type = string
+  description = "GCP project name"
   default = "jitendralab"
 }
 
+# define GCP region
 variable "region" {
-  type    = string
-  default = "asia-south1"
+  type = string
+  description = "GCP region"
+  default     = "us-central"
 }
-
+# define GCP zone
 variable "zone" {
-  type    = string
-  default = "asia-south1-c"
+  type = string
+  description = "GCP zone"
+  default     = "us-central1"
 }
 
-
-variable "networks_name" {
-  type    = string
-  default = "jeeth-network"
+# define private subnet
+variable "private_subnet_cidr_1" {
+  type = string
+  description = "private_subnet_CIDR 1"
+  default     = "10.0.10.0/28"
 }
 
-variable "service_port_name" {
-  type    = number
-  default = "80"
+# define application name
+variable "app_name" {
+  type = string
+  description = "Application name"
+  default = "Jitendra-gcp-application"
 }
-
-variable "service_port" {
-  type    = number
-  default = "80"
-}
-
-variable "backend" {
-  type    = map
-  default = {
-      "description"             = "null"
-      "protocol"                = "HTTP"
-      "port"                    = "var.service_port"
-      "port_name"               = "var.service_port_name"
-      "timeout_sec"             = "10"
-      "enable_cdn"              = "false"
-      "custom_request_headers"  = "null"
-      "custom_response_headers" = "null"
-      "security_policy"         = "null"
-      "connection_draining_timeout_sec" = "null"
-      "session_affinity"                = "null"
-      "affinity_cookie_ttl_sec"         = "null"
-}
-   }
 
