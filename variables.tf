@@ -25,6 +25,12 @@ variable "private_subnet_cidr_1" {
   default     = "10.0.10.0/28"
 }
 
+variable "private_subnet_cidr_2" {
+  type = string
+  description = "private_subnet_CIDR 2"
+  default     = "10.0.11.0/28"
+}
+
 # define application name
 variable "app_name" {
   type = string
