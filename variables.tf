@@ -44,15 +44,15 @@ variable "private-subnet" {
   type        = list(any)
   default = [ {
     "name" = "web-subnet"
-    "cidr"  = ["10.0.10.0/28"]
+    "cidr"  = "10.0.10.0/28"
   },
   {
    "name" = "app-subnet"
-    "cidr"  = ["10.0.11.0/28"] 
+    "cidr"  = "10.0.11.0/28"
   },
   {
    "name" = "db-subnet"
-    "cidr"  = ["10.0.12.0/28"] 
+    "cidr"  = "10.0.12.0/28"
   }  ]
 }
 # define application name
