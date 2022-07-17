@@ -1,6 +1,6 @@
 module "network" {
   source  = "app.terraform.io/Bruttech/network/google"
-  version = "2.1.0"
+  version = "2.2.0"
   # insert required variables here
   project = var.project
   region  = var.region
@@ -11,9 +11,7 @@ module "network" {
   app_name	= var.app_name
   #private_subnet_cidr_1	=	var.private_subnet_cidr_1
   private-subnet  = var.private-subnet
-  private_subnet_cidr = var.private_subnet_cidr
-
- }
+   }
 
 /*
 module "network_Subnet_2" {
