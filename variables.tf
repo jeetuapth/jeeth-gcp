@@ -56,6 +56,7 @@ variable "private-subnet" {
     "cidr"  = "10.0.12.0/28"
   }  
 }
+}
 
 # define application name
 variable "app_name" {
