@@ -1,6 +1,6 @@
 module "network" {
   source  = "app.terraform.io/Bruttech/network/google"
-  version = "2.2.0"
+  version = "2.3.0"
   # insert required variables here
   project = var.project
   region  = var.region
